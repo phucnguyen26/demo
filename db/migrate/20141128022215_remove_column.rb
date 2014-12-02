@@ -1,6 +1,6 @@
 class RemoveColumn < ActiveRecord::Migration
   def up
-    remove_column :answers, :wrong_content
+    #remove_column :answers, :wrong_content
   end
   def self.down
     #add_column :answers, :content, :string
