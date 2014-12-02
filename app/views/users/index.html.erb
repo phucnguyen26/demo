@@ -1,0 +1,16 @@
+<% provide(:title, 'All users') %>
+<img alt="Rails logo" height = "80" src="/assets/elearning-logo.png" />
+<h1>All users</h1>
+
+  <% @users.each do |user| %>
+    <br>
+    <%= gravatar_for (user) %>
+    <%= user.id%>-
+    <%= link_to user.name, user %><br>
+
+    <% if current_user.admin? && !current_user?(user) %>
+    |<%= link_to "delete", user, method: :delete,
+                                  data: {confirm: "You sure?"} %><br>
+  <% end %>
+
+<%end%>

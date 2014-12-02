@@ -1,0 +1,7 @@
+<% @users.each do |user| %>
+    <br><li>
+    <%= gravatar_for (user) %>
+    <%= user.id%>-
+    <%= link_to user.name, user %><br></li>
+  <% end %>
+

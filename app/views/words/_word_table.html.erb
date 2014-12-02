@@ -1,0 +1,18 @@
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>English</th>
+			<th>Vietnamese</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%@words.each do |word|%>
+		<tr>
+			<td><%= word.english %></td>
+			<td><%= word.categorie_id %></td>
+		</tr>
+		</tr>
+		<%end%>
+	</tbody>
+
+</table>

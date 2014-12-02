@@ -1,0 +1,23 @@
+<% provide(:title, 'All words') %> 
+<img alt="Rails logo" height = "80" src="/assets/elearning-logo.png" />
+<h1>All Categories</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Category List</th>
+			<th>You've learned</th>
+			<th>Action Now</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%@categories.each do |categorie|%>
+		<tr>
+			<td><%= categorie.name %></td>
+		<td><%= (Word.learned current_user.id ,categorie.id).count %> / 
+			<%= categorie.words.count %></td>
+			<td><%= link_to "Start", "#", class: "btn btn-default" %></td>
+		</tr>
+		<%end%>
+	</tbody>
+</table>
